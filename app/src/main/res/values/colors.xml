@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#9575CD</color> <!-- Pink -->
+    <color name="purple_500">#FF2196F3</color> <!-- Blue -->
+    <color name="purple_700">#FF3F51B5</color> <!-- Indigo -->
+    <color name="teal_200">#FF009688</color> <!-- Teal -->
+    <color name="teal_700">#FF4CAF50</color> <!-- Green -->
+    <color name="black">#FF212121</color> <!-- Dark Gray -->
+    <color name="white">#FFFFFFFF</color> <!-- White -->
+
+</resources>
