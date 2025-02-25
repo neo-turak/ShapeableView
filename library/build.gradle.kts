@@ -44,8 +44,8 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.neoturak"
-            artifactId = "view"
-            version = "1.0.0"
+            artifactId = "shapeableview"
+            version = "1.0.1"
             afterEvaluate {
                 from(components["release"])
             }

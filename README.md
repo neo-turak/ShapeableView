@@ -62,7 +62,7 @@ In your **app** build.gradle.kts (or build.gradle):
 ```groovy
 
 dependencies {
-    implementation("com.github.neoturak:view:TAG")
+    implementation("com.github.neoturak:ShapeableView:TAG")
 }
 
 ```
