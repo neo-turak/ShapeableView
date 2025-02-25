@@ -1,30 +1,29 @@
-
-
-
-
-
-
 # Shapeable Views Library
 
 ![Banner Image](screenshots/banner.jpg)
 
-A modern Android library providing customizable, shapeable versions of common UI components with rounded corners, strokes, gradients, and more. Built with Kotlin, this library enhances your app’s design with minimal effort.
+A modern Android library providing customizable, shapeable versions of common UI components with
+rounded corners, strokes, gradients, and more. Built with Kotlin, this library enhances your app’s
+design with minimal effort.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![JitPack](https://jitpack.io/v/neoturak/view.svg)](https://jitpack.io/#neoturak/view)
+[![JitPack](https://jitpack.io/#neo-turak/ShapeableView/Tag)](https://jitpack.io/#neo-turak/ShapeableView/Tag)
 
 ## Features
 
-- **Shapeable Components**: Includes `CircleImageView`, `ShapeableImageView`, `ShapeableButton`, `ShapeableEditText`, and more—covering layouts like `ConstraintLayout`, `LinearLayout`, etc.
-- **Customizable**: Adjust corner radii (individual or uniform), stroke width/color, gradient backgrounds, and solid colors.
+- **Shapeable Components**: Includes `CircleImageView`, `ShapeableImageView`, `ShapeableButton`,
+  `ShapeableEditText`, and more—covering layouts like `ConstraintLayout`, `LinearLayout`, etc.
+- **Customizable**: Adjust corner radii (individual or uniform), stroke width/color, gradient
+  backgrounds, and solid colors.
 - **Lightweight**: No heavy dependencies, pure Kotlin implementation.
-- **Modern Design**: Inspired by Material Design principles, with support for dynamic updates and XML attributes.
+- **Modern Design**: Inspired by Material Design principles, with support for dynamic updates and
+  XML attributes.
 - **Easy Integration**: Available via JitPack for quick setup in your Android projects.
 
 ## Components
 
 | Component                    | Description                                     |
-| ---------------------------- | ----------------------------------------------- |
+|------------------------------|-------------------------------------------------|
 | `CircleImageView`            | Circular image view with border support         |
 | `ShapeableImageView`         | Image view with rounded corners and strokes     |
 | `ShapeableButton`            | Button with customizable shape and gradient     |
@@ -45,7 +44,9 @@ A modern Android library providing customizable, shapeable versions of common UI
 Add the library via JitPack to your project:
 
 ### Step 1: Add JitPack Repository
+
 In your **root** `build.gradle.kts` (or `build.gradle`):
+
 ```kotlin
 allprojects {
     repositories {
@@ -66,7 +67,9 @@ dependencies {
 
 ```
 
-Replace **TAG** with the latest release version (e.g., **1.0.0**) or commit hash from GitHub. Check the [releases page](https://github.com/neoturak/view/releases) or use **main-SNAPSHOT** for the latest snapshot.
+Replace **TAG** with the latest release version (e.g., **1.0.0**) or commit hash from GitHub. Check
+the [releases page](https://github.com/neoturak/view/releases) or use **main-SNAPSHOT** for the
+latest snapshot.
 
 Sync your project, and you’re ready to go!
 
@@ -77,23 +80,15 @@ Sync your project, and you’re ready to go!
 Add a ShapeableImageView with rounded corners, stroke, and gradient:
 
 ```xml
-   <com.github.neoturak.view.ShapeableImageView
-        android:id="@+id/iv_image"
-        android:layout_width="200dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="centerCrop"
-        app:gradient_angle="LEFT_RIGHT"
-        app:gradient_endColor="#33E633"
-        app:gradient_startColor="#220707"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/attr_list"
-        app:shape_cornersRadius="10dp"
-        app:shape_soldColor="@color/teal_200"
-        app:shape_strokeColor="@color/teal_700"
-        app:shape_strokeWidth="5dp"
-        app:srcCompat="@mipmap/test" />
+
+<com.github.neoturak.view.ShapeableImageView android:id="@+id/iv_image" android:layout_width="200dp"
+    android:layout_height="160dp" android:layout_marginTop="10dp" android:scaleType="centerCrop"
+    app:gradient_angle="LEFT_RIGHT" app:gradient_endColor="#33E633"
+    app:gradient_startColor="#220707" app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/attr_list" app:shape_cornersRadius="10dp"
+    app:shape_soldColor="@color/teal_200" app:shape_strokeColor="@color/teal_700"
+    app:shape_strokeWidth="5dp" app:srcCompat="@mipmap/test" />
 ```
 
 ### Kotlin Example
@@ -111,7 +106,7 @@ circleImageView.setImageResource(R.mipmap.ic_launcher)
 ## Attributes(Shapeable)
 
 | Attribute               | Description                      | Format    | Default        |
-| ----------------------- | -------------------------------- | --------- | -------------- |
+|-------------------------|----------------------------------|-----------|----------------|
 | shape_cornersRadius     | Uniform corner radius            | dimension | 0dp            |
 | shape_cornerTopLeft     | Top-left corner radius           | dimension | 0dp            |
 | shape_cornerTopRight    | Top-right corner radius          | dimension | 0dp            |
@@ -129,7 +124,7 @@ the above works on all of them, except **CircleImageView**
 ## Attributes(CircleImageView)
 
 | Attribute                   | Description                             | Format    | Default     |
-| --------------------------- | --------------------------------------- | --------- | ----------- |
+|-----------------------------|-----------------------------------------|-----------|-------------|
 | civ_border_width            | Border width (CircleImageView)          | dimension | 0dp         |
 | civ_border_color            | Border color (CircleImageView)          | color     | Black       |
 | civ_border_overlay          | Border overlaps image (CircleImageView) | boolean   | false       |
@@ -140,7 +135,7 @@ I have just convert the Java file to Kotlin, lets just keep what attribute is.
 ## Attributes(ViewGroup)
 
 | Attribute | Description                              | Format  | Default |
-| --------- | ---------------------------------------- | ------- | ------- |
+|-----------|------------------------------------------|---------|---------|
 | cut_child | view group need to cut child view or not | boolean | false   |
 
 In some occasion, the ViewGroup need to cut the child.
@@ -148,7 +143,7 @@ In some occasion, the ViewGroup need to cut the child.
 ## Screenshots
 
 | ShapeableImageView                        | CircleImageView                        |
-| ----------------------------------------- | -------------------------------------- |
+|-------------------------------------------|----------------------------------------|
 | ![](screenshots/shapeable_image_view.png) | ![](screenshots/circle_image_view.png) |
 
 ## Contributing
@@ -161,7 +156,8 @@ We welcome contributions! To contribute:
 4. Push to the branch (git push origin feature/awesome-addition).
 5. Open a Pull Request.
 
-Please follow the [Code of Conduct](CODE_OF_CONDUCT.md) and check the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Please follow the [Code of Conduct](CODE_OF_CONDUCT.md) and check
+the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
@@ -185,5 +181,6 @@ limitations under the License.
 
 ## Acknowledgments
 
-- Inspired by [hdodenhof/CircleImageView](https://github.com/hdodenhof/CircleImageView) for the circular image implementation.
+- Inspired by [hdodenhof/CircleImageView](https://github.com/hdodenhof/CircleImageView) for the
+  circular image implementation.
 - Built with ❤️ for the Android developer community.
