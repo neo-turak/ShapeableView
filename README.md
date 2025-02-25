@@ -81,14 +81,23 @@ Add a ShapeableImageView with rounded corners, stroke, and gradient:
 
 ```xml
 
-<com.github.neoturak.view.ShapeableImageView android:id="@+id/iv_image" android:layout_width="200dp"
-    android:layout_height="160dp" android:layout_marginTop="10dp" android:scaleType="centerCrop"
-    app:gradient_angle="LEFT_RIGHT" app:gradient_endColor="#33E633"
-    app:gradient_startColor="#220707" app:layout_constraintLeft_toLeftOf="parent"
+<com.github.neoturak.view.ShapeableImageView 
+     android:id="@+id/iv_image" 
+     android:layout_width="200dp"
+     android:layout_height="160dp" 
+     android:layout_marginTop="10dp"         		      
+     android:scaleType="centerCrop"
+    app:gradient_angle="LEFT_RIGHT" 
+    app:gradient_endColor="#33E633"
+    app:gradient_startColor="#220707" 
+    app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/attr_list" app:shape_cornersRadius="10dp"
-    app:shape_soldColor="@color/teal_200" app:shape_strokeColor="@color/teal_700"
-    app:shape_strokeWidth="5dp" app:srcCompat="@mipmap/test" />
+    app:layout_constraintTop_toBottomOf="@id/attr_list" 
+    app:shape_cornersRadius="10dp"
+    app:shape_soldColor="@color/teal_200" 
+    app:shape_strokeColor="@color/teal_700"
+    app:shape_strokeWidth="5dp" 
+    app:srcCompat="@mipmap/test" />
 ```
 
 ### Kotlin Example
