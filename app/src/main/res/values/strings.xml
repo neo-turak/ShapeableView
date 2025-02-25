@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Fusion</string>
-    <string name="primary_title">21 centre Shapeable View</string>
+    <string name="app_name">ShapeableView</string>
+    <string name="primary_title">21 centre Shapeable View library</string>
 </resources>

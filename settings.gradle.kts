@@ -28,6 +28,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "fusion"
+rootProject.name = "ShapeableView"
 include(":app")
 include(":library")
