@@ -7,7 +7,7 @@ rounded corners, strokes, gradients, and more. Built with Kotlin, this library e
 design with minimal effort.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![JitPack](https://jitpack.io/#neo-turak/ShapeableView/Tag)](https://jitpack.io/#neo-turak/ShapeableView/Tag)
+[![Jitpack](https://jitpack.io/v/neo-turak/ShapeableView.svg)](https://jitpack.io/#neo-turak/ShapeableView)
 
 ## Features
 
