@@ -11,7 +11,6 @@ import android.graphics.RectF
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
-import android.util.Log
 import androidx.appcompat.widget.AppCompatImageView
 import com.github.neoturak.R
 import com.github.neoturak.utils.ViewUtils
@@ -155,7 +154,7 @@ class ShapeableImageView : AppCompatImageView {
             post {
                 updateClipPath()
                 invalidate()
-                Log.d("ShapeableImageView", "initView: Deferred clip path update")
+                //"initView: Deferred clip path update")
             }
         } else {
             updateClipPath()
@@ -182,10 +181,6 @@ class ShapeableImageView : AppCompatImageView {
             shape.orientation = realAngle
         }
         this.background = shape
-        Log.d(
-            "ShapeableImageView",
-            "setAttrs: Background set with corners: ${corners.joinToString()}"
-        )
         strokePaint.strokeWidth = strokeWidth
         strokePaint.color = strokeColor
     }
@@ -194,7 +189,7 @@ class ShapeableImageView : AppCompatImageView {
         if (path == null) return //this is swill needed,
         path.reset() // No null check needed since path is always initialized
         if (width == 0 || height == 0) {
-            Log.d("ShapeableImageView", "updateClipPath: Width or height is 0, skipping")
+            //updateClipPath: Width or height is 0, skipping
             return
         }
         val corners = floatArrayOf(
@@ -205,46 +200,27 @@ class ShapeableImageView : AppCompatImageView {
         )
         val rect = RectF(0f, 0f, width.toFloat(), height.toFloat())
         path.addRoundRect(rect, corners, Path.Direction.CW)
-        Log.d(
-            "ShapeableImageView",
-            "updateClipPath: Path updated - Width=$width, Height=$height, Corners=${corners.joinToString()}"
-        )
+        // "updateClipPath: Path updated - Width=$width, Height=$height, Corners=${corners.joinToString()}"
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         updateClipPath()
         invalidate()
-        Log.d("ShapeableImageView", "onSizeChanged: New size w=$w, h=$h")
     }
 
     override fun onDraw(canvas: Canvas) {
         if (path.isEmpty) {
-            Log.d("ShapeableImageView", "onDraw: Path is empty, no clipping applied")
+            //  "onDraw: Path is empty, no clipping applied")
             super.onDraw(canvas)
         } else {
             canvas.save()
-            val clipped = canvas.clipPath(path)
-            Log.d(
-                "ShapeableImageView",
-                "onDraw: Clipping applied=$clipped, Path bounds=${
-                    path.computeBounds(
-                        RectF(),
-                        true
-                    )
-                }"
-            )
+            canvas.clipPath(path)
             super.onDraw(canvas)
-
             // Draw stroke on top of the clipped image
             if (strokeWidth > 0f && strokeColor != Color.TRANSPARENT) {
                 canvas.drawPath(path, strokePaint)
-                Log.d(
-                    "ShapeableImageView",
-                    "onDraw: Stroke drawn with width=$strokeWidth, color=$strokeColor"
-                )
             }
-
             canvas.restore()
         }
     }
